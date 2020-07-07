@@ -1,0 +1,72 @@
+﻿@model ModelValidationDemonstration.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<style>
+    .input-validation-error{
+
+    }
+
+    .field-validation-error{
+        color:red;
+    }
+</style>
+</head>
+<body>
+    <div> 
+        <h2>Understanding the Concept of Model Validation...</h2>
+        <h2>New Employee Registration Page...</h2>
+        @using (Html.BeginForm())
+        {
+            <p>
+                <label>Employee ID : @Html.TextBoxFor(e=>e.Id)</label>
+                @Html.ValidationMessageFor(e=>e.Id)
+            </p>
+            <p>
+                <label>Employee Name : @Html.TextBoxFor(e => e.Name)</label>
+                @Html.ValidationMessageFor(e => e.Name)
+            </p>
+            <p>
+                <label>Employee Location : @Html.TextBoxFor(e => e.Location)</label>
+                @Html.ValidationMessageFor(e => e.Location)
+            </p>
+            <p>
+                <label>Employee Salary : @Html.TextBoxFor(e => e.Salary)</label>
+                @Html.ValidationMessageFor(e => e.Salary)
+            </p>
+            <p>
+                <label>Alternate Email ID : @Html.TextBoxFor(e => e.EmailId)</label>
+                @Html.ValidationMessageFor(e => e.EmailId)
+            </p>
+            <p>
+                <label>Employee Contact No : @Html.TextBoxFor(e => e.ContactNo)</label>
+                @Html.ValidationMessageFor(e => e.ContactNo)
+            </p>
+            <p>
+                <label>Employee Qualification : @Html.TextBoxFor(e => e.Qualification)</label>
+                @Html.ValidationMessageFor(e => e.Qualification)
+            </p>
+            <p>
+                <label>Employee Date Of Joining : @Html.TextBoxFor(e => e.DOJ)</label>
+                @Html.ValidationMessageFor(e => e.DOJ)
+            </p>
+            <p>
+                <label>@Html.CheckBoxFor(e=>e.IsTermsAccepted) : Please Accept the Terms and Conditions</label>
+                @Html.ValidationMessageFor(e => e.IsTermsAccepted)
+            </p>
+            <button>Create</button>
+        }
+    </div>
+</body>
+</html>
